@@ -10,6 +10,19 @@
 	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 <body>
+<div class="wrapModal">
+  <div class="modalWindow">
+    <div class="close">
+      <a href="javascript:">Закрыть</a>
+    </div>
+    <form>
+		<input class="name" placeholder="Имя" name="name" type="text">
+		<input class="fam" placeholder="Фамилия" name="name" type="text">
+		<input placeholder="Телефон" name="tel" type="text">
+		<a onclick="send_email(this)" class="btn">Заказать</a>
+	</form>
+  </div>
+</div>
 	<div class="head">
 		<div class="content">
 			<div class="callback">
@@ -116,7 +129,7 @@
 						КАЛЬКУЛЯТОР
 					</div>
 				</div>
-				<div class="long">
+				<div class="optn">
 					<div class="text">
 						Длина
 					</div>
@@ -124,7 +137,7 @@
 						<input type="text">
 					</div>
 				</div>
-				<div class="width">
+				<div class="optn">
 					<div class="text">
 						Ширина
 					</div>
@@ -132,7 +145,7 @@
 						<input type="text">
 					</div>
 				</div>
-				<div class="height">
+				<div class="optn">
 					<div class="text">
 						Высота
 					</div>
@@ -140,7 +153,7 @@
 						<input type="text">
 					</div>
 				</div>
-				<div class="col">
+				<div class="optn">
 					<div class="text">
 						Количество
 					</div>
@@ -162,7 +175,46 @@
 		</div>
 		<div class="we">
 			<div class="content">
-				
+				<div class="text">
+					<div>
+						<img src="img/check.png" alt="">
+					</div>
+					<div>У нас охуенный бетон</div>
+				</div>
+				<div class="text">
+					<div>
+						<img src="img/check.png" alt="">
+					</div>
+					<div>У нас охуенный бетон</div>
+				</div>
+				<div class="text">
+					<div>
+						<img src="img/check.png" alt="">
+					</div>
+					<div>У нас охуенный бетон</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mapTitle">
+		<div class="content">
+			<div class="title">
+				КАК НАС НАЙТИ?
+			</div>
+		</div>
+	</div>
+	<div class="map">
+		<div class="content">
+			<script type="text/javascript" charset="utf-8" src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=Sed6Omo_1vOXwsciMhBrMOZ2gkuZnUQv&width=1170&height=450"></script>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="content">
+			<div class="callback">
+				<a class="btn" href="javascript:">ЗАКАЗАТЬ ЗВОНОК</a>
+			</div>
+			<div class="number">
+				8 (843) 222-22-22
 			</div>
 		</div>
 	</div>

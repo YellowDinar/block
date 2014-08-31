@@ -1,9 +1,12 @@
 $(function() {
-  $('body').click(function(e) {
-    if($(this).hasClass('_design')) {
-      $(this).removeClass('_design');
-    } else {
-      $(this).addClass('_design');
-    }
-  });
+	$('.close a').click(function() {
+		$('.wrapModal').hide();
+	});
+
+	$('.head .btn').click(function() {
+		$('.wrapModal').show();
+	});
+	$('.footer .btn').click(function() {
+		$('.wrapModal').show();
+	});
 });
