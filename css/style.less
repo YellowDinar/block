@@ -197,7 +197,8 @@ body {
         margin-left: -9px;   
       }
       &:nth-child(3) {
-        margin-left: -18px;   
+        margin-left: -18px;  
+        margin-bottom: -5px; 
       }
     }
     .orderBtn {
@@ -207,16 +208,21 @@ body {
         width: 14px;
         height: 52px;
         content: '';
-        top: -16px;
+        top: 0px;
         left: -13px;
         position: absolute;
         background-image: url(../img/btn.png);
-        -webkit-background-size: 20px;
+        -webkit-background-size: 28px;
         background-position: 0 0;
         background-size: 28px;
       }
       .btn {
-        padding: 13px 85px;
+        width: 351px;
+        height: 52px;
+        line-height: 52px;
+        text-align: center;
+        padding: 0;
+        .display-inline-block();
       }
       &:hover {
         &:before {
@@ -339,6 +345,7 @@ body {
   width: 292px;
   margin-left: 423px; 
   padding: 27px 28px;
+  .display-inline-block();
   border: 1px solid #565656;
   background: #898989;
   .border-radius(5px);
@@ -365,6 +372,57 @@ body {
     font-family: "Trebuchet MS";
   }
 }
+
+.count2 {
+  width: 292px;
+  height: 352px;
+  margin-left: 23px; 
+  padding: 27px 28px;
+  background: #898989;
+  .display-inline-block();
+    border: 1px solid #565656;
+  .border-radius(5px);
+  .box-shadow(20px 20px 10px rgba(0,0,0,0.2));
+  display: none;
+  .title {
+    padding: 6px 24px;
+    margin-bottom: 18px;
+    height: 56px;
+    background-image: url(../img/bg_calc.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-background-size: 400px;
+    background-size: 400px;
+  }
+  .inner {
+    height: 34px;
+    line-height: 36px;
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid #b2b3b3;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Trebuchet MS";
+  }
+  .all {
+    .btn {
+      padding: 16px 54px;
+      .display-inline-block();
+    }
+  }
+  .summ {
+    margin-top: 80px;
+    margin-bottom: 82px;
+    border: 5px solid #5b5b5b;
+    background: #727271;
+    text-align: center;
+    text-align: center;
+    font-size: 3.5em;
+    color: white;
+  }
+}
+
 
 .optn {
   >div {
