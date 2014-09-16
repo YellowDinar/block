@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=1200px">       
+	<meta name="viewport" content="width=1200px">
+    
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/modernizr.custom.js"></script>
+    
 	<title>Мастер блоков</title>
 	<link rel="stylesheet" type="text/less" href="css/style.less">
     <script type="text/javascript" src="js/less.js"></script>
@@ -10,15 +14,37 @@
 	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 <body>
+        <div class="md-modal md-effect-4" id="modal-4">
+			<div class="md-content">
+				<h3>Хотите получить надежный материал?</h3>
+				<div>
+					<table>
+                        <tr>
+                            <td>
+                                <img style="width: 300px;" src="img/images.jpeg" />
+                            </td>
+                            <td>
+                                <form>
+                                    <input name="name" placeholder="Имя" type="text">
+                                    <input placeholder="Телефон" name="tel" type="text">
+                                    <a>Заказать</a>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+					<button class="md-close">Закрыть</button>
+				</div>
+			</div>
+        </div>
 <div class="wrapModal">
   <div class="modalWindow">
     <div class="close">
       <a href="javascript:">Закрыть</a>
     </div>
     <form>
-		<input class="name" placeholder="Имя" name="name" type="text">
-		<input class="fam" placeholder="Фамилия" name="name" type="text">
-		<input placeholder="Телефон" name="tel" type="text">
+		<input class="name" placeholder="Имя *" name="name" type="text">
+		<input class="fam" placeholder="Телефон *" name="tel" type="text">
+		<input placeholder="Email" name="email" type="text">
 		<a onclick="send_email(this)" class="btn">Заказать</a>
 	</form>
   </div>
@@ -27,27 +53,36 @@
 		<div class="content">
 			<div class="callback">
 				<a class="btn" href="javascript:">ЗАКАЗАТЬ ЗВОНОК</a>
+                <button class="md-trigger" style="display:none;" data-modal="modal-4">Newspaper</button>
 			</div>
 			<div class="number">
-				8 (843) 222-22-22
+				8 (843) 247-55-55
 			</div>
 			<div class="logo">
 				<img src="img/logo.png" alt="">
 			</div>
 		</div>
 	</div>
+    <div class="orderTitle">
+        <div class="content">
+            ДЕШЕВЛЕ ЕСТЬ, ЛУЧШЕ НЕТ!
+        </div>
+    </div>
 	<div class="order">
 		<div class="content">
+            <div class="someText">
+                <span>БЕСПЛАТНАЯ</span> <br> КОНСУТАЛЬЦИЯ СПЕЦИАЛИСТА
+            </div>
 			<div class="form">
 				<form action="">
 					<div>
-						<input placeholder="Имя" type="text" class="name">
+						<input placeholder="Имя *" name="name" type="text" class="name">
 					</div>
 					<div>
-						<input placeholder="Фамилия" type="text" class="fam">	
+						<input placeholder="Телефон *" name="tel" type="text" class="fam">	
 					</div>
 					<div>
-						<input placeholder="E-mail" type="text" class="email">
+						<input placeholder="Email" name="email" type="text" class="email">
 					</div>
 					<div class="orderBtn">
 						<a href="javascript:" class="btn">ЗАКАЗАТЬ ЗВОНОК</a>
@@ -134,7 +169,7 @@
 						Длина
 					</div>
 					<div class="input">
-						<input type="text">
+						<input type="text" id="c_length">
 					</div>
 				</div>
 				<div class="optn">
@@ -142,7 +177,7 @@
 						Ширина
 					</div>
 					<div class="input">
-						<input type="text">
+						<input type="text" id="c_width">
 					</div>
 				</div>
 				<div class="optn">
@@ -150,7 +185,7 @@
 						Высота
 					</div>
 					<div class="input">
-						<input type="text">
+						<input type="text" id="c_height">
 					</div>
 				</div>
 				<div class="optn">
@@ -158,11 +193,11 @@
 						Количество
 					</div>
 					<div class="input">
-						<input type="text">
+						<input type="text" id="c_amount">
 					</div>
 				</div>
 				<div class="all">
-					<a href="javascript:" class="btn">ПОДСЧИТАТЬ</a>
+					<a onclick="calculate()" class="btn">ПОДСЧИТАТЬ</a>
 				</div>
 			</div>
 			<div class="count2">
@@ -192,19 +227,19 @@
 					<div>
 						<img src="img/check.png" alt="">
 					</div>
-					<div>У нас охуенный бетон</div>
+					<div>Высокое качество</div>
 				</div>
 				<div class="text">
 					<div>
 						<img src="img/check.png" alt="">
 					</div>
-					<div>У нас охуенный бетон</div>
+					<div>Идеальная геометрия</div>
 				</div>
 				<div class="text">
 					<div>
 						<img src="img/check.png" alt="">
 					</div>
-					<div>У нас охуенный бетон</div>
+					<div>Удобный способ оплаты</div>
 				</div>
 			</div>
 		</div>
@@ -227,9 +262,27 @@
 				<a class="btn" href="javascript:">ЗАКАЗАТЬ ЗВОНОК</a>
 			</div>
 			<div class="number">
-				8 (843) 222-22-22
+				8 (843) 247-55-55
 			</div>
 		</div>
 	</div>
+    
+    
+    <div class="md-overlay"></div><!-- the overlay element -->
+
+		<!-- classie.js by @desandro: https://github.com/desandro/classie -->
+		<script src="js/classie.js"></script>
+		<script src="js/modalEffects.js"></script>
+        
+		<!-- for the blur effect -->
+		<!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+		<script>
+			// this is important for IEs
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="js/cssParser.js"></script>
+		<script src="js/css-filters-polyfill.js"></script>
+    
+    
 </body>
 </html>
