@@ -33,5 +33,36 @@ function calculate() {
     } else {
         alert('Заполните все поля!');
     }
-    
+
 }
+
+$(function() {
+    var position = $('.weTitle').offset().top - $(window).height()/2;
+    var first = $('.we').find('.text').get(0);
+    var second = $('.we').find('.text').get(1);
+    var third = $('.we').find('.text').get(2);
+    $(window).bind('scroll', function() {
+        var windowScroll = $(window).scrollTop();
+        if(windowScroll>position) {
+            setTimeout(function() {
+                $(first).animate({
+                    'opacity': 1,
+                    'padding-left': 370
+                }, 300);
+            },0);
+            setTimeout(function() {
+                $(second).animate({
+                    'opacity': 1,
+                    'padding-left': 370
+                }, 300);
+            },300);
+            setTimeout(function() {
+                $(third).animate({
+                    'opacity': 1,
+                    'padding-left': 370
+                }, 300);
+            },600);
+            $(window).unbind('scroll');
+        }
+    });
+});

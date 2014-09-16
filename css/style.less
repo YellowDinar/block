@@ -146,6 +146,7 @@ body {
   background: -ms-linear-gradient(top, lighten(#f5a322,5%) 0%,lighten(#fbc70c,5%) 50%,lighten(#f5a322,5%) 100%); /* IE10+ */
   background: linear-gradient(to bottom, lighten(#f5a322,5%) 0%,lighten(#fbc70c,5%) 50%,lighten(#f5a322,5%) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5a322', endColorstr='#f5a322',GradientType=0 ); /* IE6-9 */
+  cursor: pointer;
   }
 }
 
@@ -164,6 +165,38 @@ body {
     margin-top: 43px;
     margin-right: 89px;
     float: right;
+  }
+}
+
+.md-content {
+  position: relative;
+  .img {
+    .display-inline-block();
+  }
+  .form {
+    width: 150px;
+    margin-left: 32px;
+    margin-top: 10px;
+    .display-inline-block();
+    input {
+      width: 193px;
+      height: 28px;
+      font-size: 17px;
+      line-height: 26px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border: 1px solid #cacaca;
+      margin-bottom: 20px;
+    }
+    .btn {
+      .display-inline-block();
+      padding: 8px 65px;
+    }
+  }
+  .md-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
   }
 }
 
@@ -490,8 +523,9 @@ body {
   padding-bottom: 27px;
   .text {
     text-align: left;
-    padding: 0px 59px;
+    padding: 0px 59px 0 0px;
     margin-bottom: 20px;
+    opacity: 0;
     >div {
       .display-inline-block();
       vertical-align: middle;
@@ -511,12 +545,12 @@ body {
 }
 
 .footer {
-  height: 133px;
+  height: 107px;
   padding: 0px 0px;
   background: #898989;
   clear: both;
   .number {
-    margin-top: 51px;
+    margin-top: 36px;
     margin-right: 25px;
     float: right;
     color: white;
@@ -524,7 +558,7 @@ body {
     font-family: 'MachineBold';
   }
   .callback {
-    margin-top: 58px;
+    margin-top: 44px;
     margin-right: 102px;
     float: right;
   }
