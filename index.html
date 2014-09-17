@@ -19,7 +19,7 @@
 				<h3>Хотите получить надежный материал?</h3>
 				<div>
 					<div class="img">
-				        <img style="width: 300px;" src="img/images.jpeg" />
+				        <img style="width: 300px;" src="img/image001.jpg" />
 					</div>
                     <div class="form">
                     	<form>
@@ -35,7 +35,7 @@
 <div class="wrapModal">
   <div class="modalWindow">
     <div class="close">
-      <a href="javascript:">Закрыть</a>
+      <img src="img/close.png" href="javascript:" />
     </div>
     <form>
 		<input class="name" placeholder="Имя *" name="name" type="text">
@@ -160,38 +160,53 @@
 						КАЛЬКУЛЯТОР
 					</div>
 				</div>
-				<div class="optn">
-					<div class="text">
-						Длина
-					</div>
-					<div class="input">
-						<input type="text" id="c_length">
-					</div>
-				</div>
-				<div class="optn">
-					<div class="text">
-						Ширина
-					</div>
-					<div class="input">
-						<input type="text" id="c_width">
-					</div>
-				</div>
-				<div class="optn">
-					<div class="text">
-						Высота
-					</div>
-					<div class="input">
-						<input type="text" id="c_height">
-					</div>
-				</div>
-				<div class="optn">
-					<div class="text">
-						Количество
-					</div>
-					<div class="input">
-						<input type="text" id="c_amount">
-					</div>
-				</div>
+                <div class="optn">
+                    <div class="text">
+                        Площадь (кв.м.)
+                    </div>
+                    <div class="input">
+                        <input type="text" id="s">
+                    </div>
+                </div>
+                <div class="optn">
+                    <div class="text">
+                        Тип блока
+                    </div>
+                    <div class="input">
+                        <select id="type_of_block" onchange="on_select(this.options[this.selectedIndex].value)">
+                            <option selected disabled>Выбрать</option>
+                            <option value="60000">100x20x30</option>
+                            <option value="312000">130x40x60</option>
+                            <option value="set_params">Указать размеры</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="params">
+                    <div class="optn">
+                        <div class="text">
+                            Длина (см.)
+                        </div>
+                        <div class="input">
+                            <input type="text" id="c_length">
+                        </div>
+                    </div>
+                    <div class="optn">
+                        <div class="text">
+                            Ширина (см.)
+                        </div>
+                        <div class="input">
+                            <input type="text" id="c_width">
+                        </div>
+                    </div>
+                    <div class="optn">
+                        <div class="text">
+                            Высота (см.)
+                        </div>
+                        <div class="input">
+                            <input type="text" id="c_height">
+                        </div>
+                    </div>
+                </div>
 				<div class="all">
 					<a onclick="calculate()" class="btn">ПОДСЧИТАТЬ</a>
 				</div>

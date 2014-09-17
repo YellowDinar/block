@@ -18,20 +18,49 @@ $(function() {
 	});
 });
 
+var price = 0;
+
+function on_select(val){
+    price = 0;
+    document.querySelector('#params').style.display = 'none';
+    if (!Number(val)) {
+        document.querySelector('#params').style.display = 'block';
+    } else {
+        price = Number(val) / 1000000 * 1800;
+    }
+}
+
 function calculate() {
-    var l = $('#c_length').val();
-    var w = $('#c_width').val();
-    var h = $('#c_height').val();
-    var a = $('#c_amount').val();
-    if (l && w && h && a) {
-        if (Boolean(Number(l)) && Boolean(Number(w)) && Boolean(Number(h)) && Boolean(Number(a))) {
-            $('.summ')[0].innerHTML = l*w*h*a*1000 + ' руб';
+    var s = $('#s').val();
+
+
+    if (s) {
+        if (price) {
+            $('.summ')[0].innerHTML = s * price + ' руб';
             $('.count2').css('display','inline-block');
         } else {
-            alert('Параметр должен быть числом!');
+            if (document.querySelector('#params').style.display || document.querySelector('#params').style.display == 'block'){
+                var l = document.querySelector('#c_length').value;
+                var w = document.querySelector('#c_width').value;
+                var h = document.querySelector('#c_height').value;
+
+                if (l && w && h) {
+                    if (Boolean(Number(l)) && Boolean(Number(w)) && Boolean(Number(h))) {
+                        price = Number(l)/100 * Number(w)/100 * Number(h)/100 *1800;
+                        $('.summ')[0].innerHTML = s * price + ' руб';
+                        $('.count2').css('display','inline-block');
+                    } else {
+                        alert('Параметр должен быть числом!');
+                    }
+                } else {
+                    alert('Заполните размеры блока!');
+                }
+            } else {
+                alert('Выберете тип блока!');
+            }
         }
     } else {
-        alert('Заполните все поля!');
+        alert ('Заполните площадь!');
     }
 
 }
