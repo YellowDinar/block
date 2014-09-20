@@ -9,7 +9,7 @@ $(function() {
         }
     });
     
-	$('.close a').click(function() {
+	$('.close').click(function() {
 		$('.wrapModal').hide();
 	});
 
