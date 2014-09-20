@@ -299,13 +299,16 @@ body {
 }
 
 .whyTitle {
-  padding: 14px 0;
+  padding-top: 14px;
   text-align: center;
   background: #478240;
   color: white;
   font-size: 30px;
   font-family: 'Trebuchet MS';
   font-weight: bold;
+  .title {
+    padding-bottom: 14px;
+  }
 }
 .why {
   border-bottom: 55px solid #64b33f;
@@ -422,15 +425,19 @@ body {
     text-align: center;
     font-family: "Trebuchet MS";
   }
+  #type_block {
+    width: 120px;
+    margin-right: 6px;
+    .display-inline-block();
+    border: 5px solid #5b5b5b;
+  }
   #type_of_block {
-    width: 291px;
+    .display-inline-block();
+    width: 152px;
     height: 40px;
     text-align: center;
-    font-size: 20px;
+    font-size: 14px;
     border: 5px solid #ebecec;
-  }
-  #params {
-    margin-top: 12px;
   }
 }
 
@@ -522,6 +529,9 @@ body {
 
 .howworkTitle {
   &:extend(.whyTitle);
+  .title {
+    padding-bottom: 13px;
+  }
 }
 
 .howwork {
