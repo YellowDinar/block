@@ -95,3 +95,66 @@ $(function() {
         }
     });
 });
+
+$(function() {
+    var firstImg = $('.firsthow').find('img').get(0);
+    var firstText = $('.firsthow').find('span').get(0);
+    var secondImg = $('.secondhow').find('img').get(0);
+    var secondText = $('.secondhow').find('span').get(0);
+    var thirdImg = $('.thirdhow').find('img').get(0);
+    var thirdText = $('.thirdhow').find('span');
+    var position = $('.howworkTitle').offset().top - $(window).height()/2;
+    $(window).bind('scroll', function() {
+        var scrollTop = $(window).scrollTop();
+        if(scrollTop>position) {
+            setTimeout(function() {
+                $(firstImg).animate({
+                    'opacity':1,
+                    'margin-top':0
+                 },300);
+            },0);                
+            setTimeout(function() {
+                $(firstText).animate({
+                    'opacity':1,
+                    'margin-left':0
+                },300);
+            },600);
+            setTimeout(function() {
+                $('.firstarr').animate({
+                    'opacity':1
+                },300);
+            },900);
+            setTimeout(function() {
+                $(secondImg).animate({
+                    'opacity':1,
+                    'margin-top':0
+                 },300);
+            },1200);                
+            setTimeout(function() {
+                $(secondText).animate({
+                    'opacity':1,
+                    'margin-left':0
+                },300);
+            },1500);
+            setTimeout(function() {
+                $('.secondarr').animate({
+                    'opacity':1
+                },300);
+            },1800);
+            setTimeout(function() {
+                $(thirdImg).animate({
+                    'opacity':1,
+                    'margin-top':0
+                 },300);
+            },2100);                
+            setTimeout(function() {
+                $(thirdText).animate({
+                    'opacity':1,
+                    'margin-left':0
+                },300);
+            },2400);
+
+        }
+    });
+     
+});
