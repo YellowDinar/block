@@ -16,6 +16,22 @@ $(function() {
 	$('.head .btn, .footer .btn, .count2 .btn').click(function() {
 		$('.wrapModal').show();
 	});
+
+        $(window).bind('scroll', function() {
+        var prem = $('.howworkTitle').offset().top;
+        var scroll = $(window).scrollTop();
+        var arrow = $('#up');
+        if(scroll > prem) {
+            $(arrow).show();
+            $(arrow).animate({
+                'opacity': 1
+            });
+        }else {
+            $(arrow).hide();
+            $(arrow).css('opacity', 0);
+        }
+    });
+
 });
 
 var price = 0;
