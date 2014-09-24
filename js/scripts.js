@@ -107,7 +107,6 @@ $(function() {
                     'padding-left': 370
                 }, 300);
             },600);
-            $(window).unbind('scroll');
         }
     });
 });
