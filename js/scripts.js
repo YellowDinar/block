@@ -63,6 +63,7 @@ function calculate() {
                 if (l && w && h) {
                     if (Boolean(Number(l)) && Boolean(Number(w)) && Boolean(Number(h))) {
                         price = Number(l)/100 * Number(w)/100 * Number(h)/100 *1800;
+                        price = price.toFixed(2);
                         $('.summ')[0].innerHTML = s * price + ' руб';
                         $('.count2').css('display','inline-block');
                     } else {
@@ -126,52 +127,58 @@ $(function() {
                 $(firstImg).animate({
                     'opacity':1,
                     'margin-top':0
-                 },300);
+                 },200);
             },0);                
             setTimeout(function() {
                 $(firstText).animate({
                     'opacity':1,
                     'margin-left':0
-                },300);
-            },600);
+                },200);
+            },150);
             setTimeout(function() {
                 $('.firstarr').animate({
                     'opacity':1
-                },300);
-            },900);
+                },200);
+            },300);
             setTimeout(function() {
                 $(secondImg).animate({
                     'opacity':1,
                     'margin-top':0
-                 },300);
-            },1200);                
+                 },200);
+            },450);                
             setTimeout(function() {
                 $(secondText).animate({
                     'opacity':1,
                     'margin-left':0
-                },300);
-            },1500);
+                },200);
+            },600);
             setTimeout(function() {
                 $('.secondarr').animate({
                     'opacity':1
-                },300);
-            },1800);
+                },200);
+            },750);
             setTimeout(function() {
                 $(thirdImg).animate({
                     'opacity':1,
                     'margin-top':0
-                 },300);
-            },2100);                
+                 },200);
+            },900);                
             setTimeout(function() {
                 $(thirdText).animate({
                     'opacity':1,
                     'margin-left':0
-                },300);
-            },2400);
+                },200);
+            },1050);
 
         }
     });
-     
+    $('.wrapModal').click( function(event){
+        if( $(event.target).closest(".modalWindow").length ) 
+    return;
+    $(".wrapModal").hide();
+    event.stopPropagation();
+});
+    
 });
 
 $(document).ready(function() {
